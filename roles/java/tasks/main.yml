@@ -1,0 +1,10 @@
+---
+- name: install wget
+  yum: name=wget state=latest
+
+- name: download oracle jdk1.8
+  command: 'wget -q -O {{JAVA_DL_PATH}} --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2F; oraclelicense=accept-securebackup-cookie" {{JAVA_DL_URL}} creates={{JAVA_DL_PATH}}'
+  poll: 10
+
+- name: be sure java8 installed
+  yum: name={{JAVA_DL_PATH}} state=installed

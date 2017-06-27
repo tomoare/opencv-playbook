@@ -1,0 +1,5 @@
+---
+#define all groups var
+DBNAME_FOR_SONAR: sonar
+DBUSER_NAME: sonar
+DBUSER_PASSWORD: sonar

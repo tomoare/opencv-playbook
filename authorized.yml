@@ -1,0 +1,8 @@
+---
+# file:opencvserver
+- hosts: all
+  tasks:
+    - name: add authorized_key
+      authorized_key:
+        user: "vagrant"
+        key: "{{ lookup('file', '/home/vagrant/.ssh/id_rsa.pub') }}"
